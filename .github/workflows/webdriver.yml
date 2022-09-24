@@ -1,9 +1,9 @@
 name: Testing for Telnyx with WebdriverIO
 on:
   push:
-    branches: main
+    branches: master
   pull_request:
-    branches: main
+    branches: master
 jobs:
   test:
     timeout-minutes: 60
@@ -16,7 +16,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Run all tests
-      run: npm run wdio
+      run: npm run wdio:test:chrome
     - uses: actions/checkout@v2
       if: always()
       with:
@@ -36,7 +36,7 @@ jobs:
       uses: cpina/github-action-push-to-another-repository@main
       if: always()
       env:
-        API_TOKEN_GITHUB: ${{ secrets.SECRET_TOKEN }}
+        API_TOKEN_GITHUB: ${{ secrets.ACTIONS_TOKEN }}
       with:
         source-directory: 'allure-report'
         destination-github-username: 'txt2021'
