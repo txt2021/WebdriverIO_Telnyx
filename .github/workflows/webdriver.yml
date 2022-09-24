@@ -22,7 +22,10 @@ jobs:
       with:
         repository: txt2021/WebdriverIO_Telnyx
         ref: allure-report
-        path: ./allure-results   
+        path: ./allure-results  
+    - name: Copy History
+      if: always()
+      run: cp -r $(pwd)/docs/history/. $(pwd)/allure-results/history 
     - name: Generate Allure Report
       if: always()
       run: npm run report-generate
