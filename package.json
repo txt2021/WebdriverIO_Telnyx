@@ -50,6 +50,6 @@
         "wdio:test:edge:media_spec": "cross-env NODE_ENV=testing npx wdio run ./configs/wdio.conf.edge.js --spec socialmedia_law.js",
         "report-generate": "npx allure generate allure-results --clean",
         "report-open": "npx allure open allure-report",
-        "wdio:docker": "cross-env NODE_ENV=testing npx wdio run ./configs/wdio.conf.docker.js"
+        "wdio:docker": "cross-env NODE_ENV=testing npx wdio run ./configs/wdio.conf.docker.js --spec socialmedia_law.js"
     }
 }
