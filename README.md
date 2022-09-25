@@ -103,3 +103,13 @@ npm run report-generate
 report-open
 ```
 
+## Docker
+To create docker-image
+```
+docker build -t wdiochrome:v1 .
+```
+
+To run docker-image with tests
+```
+docker run -it wdiochrome:v1
+```
