@@ -17,9 +17,9 @@ jobs:
       run: npm ci
     - name: Create image
       run: docker build -t wdiochrome:v1 .
-    - name: Run tests in image      
-      uses: actions/docker-actions@v1
-      
+    #- name: Run tests in image
+    #  run: docker run -it wdiochrome:v1
+            
     #- uses: actions/checkout@v2
     #  if: always()
     #  with:
